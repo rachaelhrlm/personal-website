@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC, useContext } from "react";
+import { GitHub, Linkedin } from "react-feather";
+import Title from "./components/title";
+import "./styles/index.scss";
+import { ThemeContext, ThemeProvider } from "./ThemeContext";
 
-function App() {
+const App: FC = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <div className={`App ${theme}-theme`}>
+        <Title>Hello World,</Title>
+        <h1 className={`subtitle`}>{`I'm Rachael.`}</h1>
+        <p className="description">{`I'm an associate software developer at Sky. I started my coding journey through Sky's Get Into Tech program of 2020.`}</p>
+        <div className={`${theme}-accent icons`}>
+          <GitHub />
+          <Linkedin />
+        </div>
+      </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,27 @@
+$dark: (
+  "background": #1f1c22,
+  "primary": #fefcfd,
+  "secondary": #14e1bf
+);
+
+$light: (
+  "background": #fefcfd,
+  "primary": #1f1c22,
+  "secondary": #ed6b86
+);
+
+$themes: (
+  "light": $light,
+  "dark": $dark
+);
+
+@each $theme, $map in $themes {
+  .#{$theme}-theme {
+    background-color: map-get($map, "background");
+    color: map-get($map, "primary");
+
+    .#{$theme}-accent {
+      color: map-get($map, "secondary");
+    }
+  }
+}
