@@ -1,13 +1,20 @@
+$color: (
+  "cyan": #14e1bf,
+  "black": #1f1c22,
+  "pink": #ed6b86,
+  "white": #fefcfd
+);
+
 $dark: (
-  "background": #1f1c22,
-  "primary": #fefcfd,
-  "secondary": #14e1bf
+  "background": map-get($color, "black"),
+  "primary": map-get($color, "white"),
+  "secondary": map-get($color, "cyan")
 );
 
 $light: (
-  "background": #fefcfd,
-  "primary": #1f1c22,
-  "secondary": #ed6b86
+  "background": map-get($color, "white"),
+  "primary": map-get($color, "black"),
+  "secondary": map-get($color, "pink")
 );
 
 $themes: (
@@ -47,6 +54,10 @@ $space-size: (
 
     a:hover {
       color: map-get($map, "primary");
+    }
+
+    .toggle {
+      background-color: map-get($map, "secondary");
     }
   }
 }

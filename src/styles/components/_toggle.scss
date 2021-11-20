@@ -1,0 +1,25 @@
+.toggle {
+  border-radius: 1rem;
+  cursor: pointer;
+  height: 2rem;
+  width: 4rem;
+
+  &-ball {
+    background-color: map-get($color, "white");
+    transition: 0.2s;
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+  }
+
+  &-off {
+    left: 0;
+    transform: translateX(100%);
+  }
+
+  &-on {
+    left: 2rem;
+    transform: translateX(-100%);
+  }
+}

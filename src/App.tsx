@@ -1,7 +1,6 @@
 import React, { FC, useState } from "react";
 import { GitHub, Linkedin } from "react-feather";
-import { SubTitle, Title, Text } from "./components";
-import { Icon } from "./components/icon";
+import { Icon, SubTitle, Title, Text, Toggle } from "./components";
 import "./styles/index.scss";
 import { ThemeContext } from "./ThemeContext";
 
@@ -9,8 +8,10 @@ export type Theme = "dark" | "light";
 
 const App: FC = () => {
   const [theme, setTheme] = useState<Theme>("dark");
+  const isDarkTheme = theme === "dark";
+
   const toggleTheme = () => {
-    theme === "dark" ? setTheme("light") : setTheme("dark");
+    isDarkTheme ? setTheme("light") : setTheme("dark");
   };
 
   return (
@@ -25,15 +26,8 @@ const App: FC = () => {
           <Icon type={<GitHub />} href="https://github.com/rachaelhrlm" />
           <Icon type={<Linkedin />} href="https://www.linkedin.com/in/helen-rachael-malinowska-14b4581b4/" />
         </div>
+        <Toggle value={isDarkTheme} onChange={() => toggleTheme()} />
       </div>
-      <button
-        type="button"
-        onClick={() => {
-          toggleTheme();
-        }}
-      >
-        Toggle Theme
-      </button>
     </ThemeContext.Provider>
   );
 };
