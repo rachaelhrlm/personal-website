@@ -1,0 +1,5 @@
+.text {
+  @include text(map-get($font-size, "md"), map-get($font-size, "lg"), 400, "Nunito");
+
+  padding: map-get($space-size, "xxs") 0;
+}

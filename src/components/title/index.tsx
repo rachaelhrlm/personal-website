@@ -1,9 +1,10 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 import { ThemeContext } from "../../ThemeContext";
 
-const Title: FC = props => {
-  const { theme } = useContext(ThemeContext);
-  return <h1 className={`${theme}-accent title`}>{props.children}</h1>;
+export const Title: FC = props => {
+  return (
+    <ThemeContext.Consumer>
+      {({ theme }) => <h1 className={`${theme}-accent title`}>{props.children}</h1>}
+    </ThemeContext.Consumer>
+  );
 };
-
-export default Title;

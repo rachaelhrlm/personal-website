@@ -1,21 +1,13 @@
-import React, { createContext, FC, useState } from "react";
+import { createContext } from "react";
 
 export type Theme = "dark" | "light";
 
 export interface ThemeProviderProps {
   theme: Theme;
-  toggleTheme?: () => void;
+  toggleTheme: () => void;
 }
 
 export const ThemeContext = createContext<ThemeProviderProps>({
-  theme: "dark"
+  theme: "dark",
+  toggleTheme: () => console.log("click")
 });
-
-export const ThemeProvider: FC = props => {
-  const [theme, setTheme] = useState<Theme>("dark");
-  const toggleTheme = () => {
-    theme === "dark" ? setTheme("light") : setTheme("dark");
-  };
-
-  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{props.children}</ThemeContext.Provider>;
-};

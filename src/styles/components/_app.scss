@@ -1,0 +1,14 @@
+.app {
+  padding-top: map-get($space-size, "xl");
+  padding-bottom: 10rem;
+  padding-left: 10rem;
+
+  &-description {
+    width: 28rem;
+  }
+  &-icons {
+    padding: map-get($space-size, "xxs") 0;
+    display: flex;
+    gap: map-get($space-size, "xxs");
+  }
+}

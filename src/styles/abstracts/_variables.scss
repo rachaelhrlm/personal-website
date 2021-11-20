@@ -15,6 +15,26 @@ $themes: (
   "dark": $dark
 );
 
+$font-size: (
+  "xxs": 0.3rem,
+  "xs": 0.5rem,
+  "sm": 0.8rem,
+  "md": 1rem,
+  "lg": 1.6rem,
+  "xl": 3rem,
+  "xxl": 4rem
+);
+
+$space-size: (
+  "xxs": 1rem,
+  "xs": 2rem,
+  "sm": 3rem,
+  "md": 5rem,
+  "lg": 7rem,
+  "xl": 8rem,
+  "xxl": 10rem
+);
+
 @each $theme, $map in $themes {
   .#{$theme}-theme {
     background-color: map-get($map, "background");
@@ -22,6 +42,11 @@ $themes: (
 
     .#{$theme}-accent {
       color: map-get($map, "secondary");
+      transition: color 0.3s linear;
+    }
+
+    a:hover {
+      color: map-get($map, "primary");
     }
   }
 }
