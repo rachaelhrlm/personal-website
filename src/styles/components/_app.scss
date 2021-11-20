@@ -1,15 +1,20 @@
 .app {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
   padding-top: map-get($space-size, "xl");
-  padding-bottom: 10rem;
-  padding-left: 10rem;
 
   &-description {
-    width: 28rem;
+    max-width: 28rem;
+    overflow: auto;
   }
   &-icons {
     padding: map-get($space-size, "xxs") 0;
     display: flex;
     gap: map-get($space-size, "xxs");
   }
+}
+
+.portfolio {
+  width: 80%;
 }
